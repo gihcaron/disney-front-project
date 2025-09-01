@@ -1,0 +1,58 @@
+.Main{
+ background-color: #f3f4f6;
+ min-height: 100vh;
+}
+.Section {
+    width: 100%;
+    height: 90vh;
+background-color: #f3f4f6;
+  padding: 2rem;
+  border-radius: 5px;
+}
+.ApiTitle{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ApiTitleText{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1d4ed8;
+}
+
+.ApiTitleSubTitle{
+    font-size: 1.5rem;
+    font-weight: semi-bold;
+    color: #1d4ed8;
+}
+
+.ApiDescription{
+    font-size: 1rem;
+    font-weight: normal;
+    color: #4b5563;
+}
+
+.SectionBanner {
+    width: 100%;
+    height: 95%;
+    background-color: #e5e7eb;
+    border-radius: 30px;
+    background-image: url('/images/ApiBanner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Cards */
+
+.SectionContent{
+  padding: 2rem;
+}
+
+.SectionContent .ApiContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+

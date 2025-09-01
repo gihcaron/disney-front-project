@@ -1,0 +1,131 @@
+.ApiFirstCard{
+    background-color: #f3f4f6;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    height: 27rem;
+    width: 28rem;
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.ApiFirstCard:hover{
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+    border: 2px solid #1d4ed8;
+}
+
+.CardPhoto {
+    border-radius: 15px 0 0 15px;
+    height: 10rem;
+    width: 100%;  
+}
+
+.CardImage {
+    object-fit: cover;
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+}
+
+.CardContent{
+    padding: 1rem 0 0  0 ;
+    gap:2rem;
+    border-radius: 0 0 15px 15px;
+}
+
+.CardTitle{
+    font-size: 1.25rem;
+    font-weight: bold;
+    color:#1d4ed8;
+    }
+
+.CardDescription{
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    text-align: justify;
+    font-size: 1rem;
+    color: #323841;
+}
+
+.CardActions{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.CardButton{
+    margin-top: 0.5rem;
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.CardButton:hover{
+    background-color: #1e40af;
+}
+
+/* Responsividade */
+
+@media (max-width: 1024px) {
+    .ApiFirstCard {
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .ApiFirstCard {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+    .CardPhoto {
+        height: 8rem;
+        border-radius: 10px 0 0 10px;
+    }
+    .CardContent {
+        padding: 0.5rem 0 0 0;
+        gap: 1rem;
+        border-radius: 0 0 10px 10px;
+    }
+    .CardTitle {
+        font-size: 1.1rem;
+    }
+    .CardDescription {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ApiFirstCard {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 10px;
+    }
+    .CardPhoto {
+        height: 6rem;
+        border-radius: 8px 0 0 8px;
+    }
+    .CardContent {
+        padding: 0.25rem 0 0 0;
+        gap: 0.5rem;
+        border-radius: 0 0 8px 8px;
+    }
+    .CardTitle {
+        font-size: 1rem;
+    }
+    .CardDescription {
+        font-size: 0.9rem;
+    }
+    .CardButton {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.95rem;
+    }
+}
