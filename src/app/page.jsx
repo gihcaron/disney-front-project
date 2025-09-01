@@ -2,7 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaGithub, FaDesktop } from "react-icons/fa";
+
 
 // Importar componentes
 import Header from "../components/Header";
@@ -14,22 +15,24 @@ export default function Home() {
       <Header />
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
 
-        <section className="p-6 h-full max-auto gap-0.5">
+        <section className=" h-full max-auto gap-0.5">
 
           <div className="flex flex-col xl:flex-row items-center justify-between pt-4 xl:pb-24">
   
             {/* Text- Presentation */}
             <div className="p-6 gap-5 text-center xl:text-left max-w-[800px] flex flex-col space-y-6 order-2 xl:order-none">
-              <span className="">Desenvolvedora de Sistemas</span>
+              <span className="font-medium">Desenvolvedora de Sistemas 👩🏻‍💻</span>
               <h1 className="h1 -4 text-[48px] xl:text-[80px] leading-[1.1] font-semibold">
                 Olá, eu sou a{" "}
                 <span className="text-blue-700">Giovanna Caron</span>
               </h1>
               <p className="max-w-[500px] mb-9 text-gray-900">
-                Sou uma desenvolvedora de sistemas apaixonada por criar soluções
-                inovadoras e eficientes.
+                Sou uma <span className="font-medium text-blue-700">desenvolvedora de sistemas</span> do SENAI Valinhos, apaixonada por criar soluções
+                inovadoras. Neste site, você encontrará meu projeto realizado durante o 4o Semestre.
               </p>
 
+              <p className="max-w-[500px] mb-9 text-gray-900"> <span className="font-medium">Objetivo:</span> Aplicação Web de API da Disney.</p>
+              <p className="max-w-[500px] mb-9 text-gray-900"> <span className="font-medium text-blue-800">Matéria:</span> Front-End II</p>
               <div className="flex flex-wrap items-start justify-start xl:flex-row xl:items-center xl:text-center gap-8 mt-8 mb-8 xl:mb-0">
                 
                 <div>

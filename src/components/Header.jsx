@@ -2,36 +2,25 @@
 
 import React from "react";
 import styles from "./Header.module.css"
-import Link from "next/link";
-
-const Links = [
-
-    {name: "homeee",
-    path: "/"
-    },
-
-    {name: "Conheça a API",
-    path: "/api"
-    },
-
-    {name: "personagens",
-    path: "/personagens"
-    },
-];
 
 export default function Header() {
     return (
-        <header>
+        <header className={styles.header}>
             <div className={styles.logo}>
-                <h1>Caron.</h1>
+                <h1 className={styles.title} onClick={() => window.location.href = "/"}> <span className="text-blue-700">Caron</span>.</h1>
             </div>
-            <nav>
-                <ul>
-                    {Links.map ((Link, index) => {
-                        <Link href={Link.path} key={index}>{Link.name}</Link>
-                    })}
-                </ul>
-            </nav>
+            <div className={styles.navigation}>
+                <nav className={styles.nav}>
+                    <ul className={styles.list}>
+                        <li className={styles.item}><a href="/">Home</a></li>
+                        <li className={styles.item}><a href="/api">Conheça a API</a></li>
+                        <li className={styles.item}><a href="/personagens">Personagens</a></li>
+                        <div className={styles.contatoContainer}>
+                        <li className={styles.contato}><a href="/contato">Contato</a></li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
         </header>
     );
 }

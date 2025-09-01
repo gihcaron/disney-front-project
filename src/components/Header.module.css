@@ -1,0 +1,112 @@
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background-color: #f3f4f6;
+    height: 6rem;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo{
+    margin-left: 4rem;
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.navigation{
+    margin-right: 4rem;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.list{
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item{
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.item:hover{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: bold;
+    color: #1d4ed8;
+}
+
+.contatoContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     height: 2rem;
+    width: 6rem;
+    background-color: #1d4ed8;
+    border-radius: 30px;
+}
+.contatoContainer:hover{
+    background-color: transparent;
+    border: 2px solid  #1d4ed8;
+    font-weight: bold;
+    color:  #1d4ed8;
+}
+.contato{
+    font-size: 1rem;
+    color: #f3f4f6;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600; 
+}
+.contato:hover{
+    color:  #1d4ed8;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        font-size: 18px;
+    }
+
+    .logo {
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    .navigation {
+        margin-right: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .list {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .contatoContainer {
+        width: 100%;
+        height: 2.5rem;
+        margin-top: 1rem;
+    }
+}
