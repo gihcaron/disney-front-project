@@ -6,18 +6,22 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 // Importar componentes
 import Header from "../components/Header";
+import Photo from "../components/Photo";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-100">
       <Header />
       <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <section className="p-6 h-full max-auto">
+
+        <section className="p-6 h-full max-auto gap-0.5">
+
           <div className="flex flex-col xl:flex-row items-center justify-between pt-4 xl:pb-24">
-            {/* Texto */}
-            <div className=" p-6 gap-5 text-center xl:text-left max-w-[800px] ">
+  
+            {/* Text- Presentation */}
+            <div className="p-6 gap-5 text-center xl:text-left max-w-[800px] flex flex-col space-y-6 order-2 xl:order-none">
               <span className="">Desenvolvedora de Sistemas</span>
-              <h1 className="h1 text-[48px] xl:text-[80px] leading-[1.1] font-semibold">
+              <h1 className="h1 -4 text-[48px] xl:text-[80px] leading-[1.1] font-semibold">
                 Olá, eu sou a{" "}
                 <span className="text-blue-700">Giovanna Caron</span>
               </h1>
@@ -25,49 +29,60 @@ export default function Home() {
                 Sou uma desenvolvedora de sistemas apaixonada por criar soluções
                 inovadoras e eficientes.
               </p>
-              <div>
-                <button className="px-8 py-4 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors font-semibold">
-                  Clique aqui
-                </button>
+
+              <div className="flex flex-wrap items-start justify-start xl:flex-row xl:items-center xl:text-center gap-8 mt-8 mb-8 xl:mb-0">
+                
+                <div>
+                  <button className="px-8 py-4 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-colors font-semibold">
+                    Clique aqui
+                  </button>
+                </div>
+
+                <div className="flex flex-wrap gap-4 mt-8 mb-8 xl:mb-0 xl:text-center">
+                  <a
+                    href="https://www.instagram.com/gihcaron?igsh=NTZia2xla2U5ZjNm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaInstagram
+                      size={32}
+                      className="text-blue-600 hover:text-blue-800"
+                    />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/giovanna-caron/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin
+                      size={32}
+                      className="text-blue-600 hover:text-blue-800"
+                    />
+                  </a>
+                  <a
+                    href="https://github.com/gihcaron"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub
+                      size={32}
+                      className="text-blue-600 hover:text-blue-800"
+                    />
+                  </a>
+                </div>
+
               </div>
 
-              <div className="flex flex-wrap gap-4 mt-8 mb-8 xl:mb-0 xl:text-center">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaInstagram
-                    size={32}
-                    className="text-blue-600 hover:text-blue-800"
-                  />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedin
-                    size={32}
-                    className="text-blue-600 hover:text-blue-800"
-                  />
-                </a>
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub
-                    size={32}
-                    className="text-blue-600 hover:text-blue-800"
-                  />
-                </a>
-              </div>
             </div>
+
             {/* Photo */}
-            <div>Photo</div>
+            <div className="order-1 xl:order-none mb-8 xl:mb-0  ">
+              <Photo />
+            </div>
           </div>
+
         </section>
+
       </div>
     </main>
   );
