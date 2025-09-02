@@ -42,6 +42,88 @@ background-color: #f3f4f6;
     background-position: center;
 }
 
+.BannerContent{
+  width: 40%;
+  height: 80%;
+  margin: 3%;
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  color: white;
+  border-radius: 30px;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: flex-end;
+}
+
+.InfoBanner{
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: rem;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.BannerTitle{
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.BannerSubTitle{
+  font-size: 0.8rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.BannerText{
+  font-size: 5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.BannerSubText{
+  text-align: justify;
+  font-size: 1rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.PlayButtonContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.PlayButton{
+  background-color: #ffffff;
+  color: #1d4ed8;
+  padding: 0.5rem 0.5rem;
+  border-radius: 50%;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.PlayButton:hover{
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+
+
+
+
+.Banner
+
 /* Cards */
 
 .SectionContent{
@@ -55,4 +137,111 @@ background-color: #f3f4f6;
   gap: 1rem;
 }
 
+/* Responsividade */
 
+@media (max-width: 1200px) {
+  .BannerContent {
+    width: 50%;
+  }
+  
+  .BannerText {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .Section {
+    padding: 1.5rem;
+  }
+  
+  .BannerContent {
+    width: 60%;
+  }
+  
+  .BannerText {
+    font-size: 3.5rem;
+  }
+  
+  .ApiTitleText {
+    font-size: 2.5rem;
+  }
+  
+  .ApiTitleSubTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .Section {
+    padding: 1rem;
+    height: auto;
+    min-height: 90vh;
+  }
+  .SectionBanner {
+    height: 65vh;
+  }
+  .BannerContent {
+    width: 70%; margin: 5%; display: flex; flex-wrap: wrap;
+
+  }
+  
+  .BannerText {
+    font-size: 2.5rem;
+  }
+  
+  .BannerTitle {
+    font-size: 1rem;
+  }
+  .ApiTitleText {
+    font-size: 2rem;
+  }
+  
+  .ApiTitleSubTitle {
+    font-size: 1rem;
+  }
+  
+  .InfoBanner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .SectionContent .ApiContent {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .Section {
+    padding: 0.5rem;
+  }
+  
+  .BannerContent {
+    width: 90%;
+    margin: 2%;
+  }
+  
+  .BannerText {
+    font-size: 2rem;
+  }
+  
+  .ApiTitleText {
+    font-size: 1.8rem;
+  }
+  
+  .ApiTitleSubTitle {
+    font-size: 1rem;
+  }
+  
+  .BannerSubText {
+    font-size: 0.9rem;
+  }
+  
+  .SectionBanner {
+    border-radius: 20px;
+  }
+  
+  .BannerContent {
+    border-radius: 20px;
+  }
+}
