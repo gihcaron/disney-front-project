@@ -1,0 +1,89 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.banner {
+  background-image: url("/images/ApiBanner.png");
+  margin: 2rem 0;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  width: 1400px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: white;
+}
+
+.title {
+  width: 50%;
+  height: 40%;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.personagens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 80%;
+    margin-bottom: 2rem;
+}
+
+.card {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  min-width: 300px;
+  max-width: 400px;
+  max-height: 350px;
+  min-height: 250px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.card img {
+  border-radius: 50px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.detailsContainer {
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.details{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.4rem 1.2em;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
