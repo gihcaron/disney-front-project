@@ -37,9 +37,21 @@ export default function Personagens() {
     fetchPersonagens();
   }, [page]);
 
-  const handleSearch = () => {
+  const handleSearch = async () => {
     const name = search.trim();
-    fetchPersonagens(name, 1);
+    if (!name) return;
+    
+    setLoading(true);
+    try {
+      const response = await axios.get(
+        `https://api.disneyapi.dev/character?name=${name}`
+      );
+      setData(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar personagens:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const cardPerPage = 3;
@@ -78,8 +90,10 @@ export default function Personagens() {
               type="text"
               placeholder="Pesquisar personagens..."
               className={styles.searchInput}
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
             />
-            <button className={styles.searchButton}>Buscar</button>
+            <button className={styles.searchButton} onClick={handleSearch}>Buscar</button>
           </div>
         </div>
         <div className={styles.cardsContainer}>
@@ -127,6 +141,7 @@ export default function Personagens() {
           ))}
         </div>
         <Pagination
+          className={styles.pagination}
           current={page}
           pageSize={cardPerPage}
           total={data?.data?.length || 0}
