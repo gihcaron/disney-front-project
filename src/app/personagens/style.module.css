@@ -3,19 +3,42 @@
   min-height: 100vh;
 }
 
-.banner {
-  background-image: url("/images/ApiBanner.png");
-  margin: 2rem;
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-  width: 1400px;
-  border-radius: 30px;
+.carouselSlide1{
+    color: #fff;
+    text-align: center;
+    background-image: url('/images/BannerToyStory.png');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.InfoBanner{
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  color: white;
+  flex-wrap: wrap;
+}
+
+.carouselSlide2{
+    color: #fff;
+    text-align: center;
+    background-image: url('/images/BannerRapunzel.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.carouselSlide3{
+    color: #fff;
+    text-align: center;
+    background-image: url('/images/BannerLilo.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.carouselSlide4{
+    color: #fff;
+    text-align: center;
+    background-image: url('/images/BannerDivertidamente.png');
+        background-size: cover;
+    background-position: center;
 }
 
 .title {
@@ -45,8 +68,8 @@
   background-color: #f0f0f0;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-width: 300px;
-height: 440px;
+  width: 300px;
+  height: 440px;
   text-align: center;
   gap: 1rem;
   padding: 1rem;
@@ -59,14 +82,13 @@ height: 440px;
   transition: all 0.1s ease;
 }
 
-
 .image {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 1rem auto;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1rem auto;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 
 .detailsContainer {
