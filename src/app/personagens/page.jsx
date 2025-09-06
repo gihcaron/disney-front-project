@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { Card, Carousel  } from "antd";
+import { Card, Carousel, Pagination, Skeleton, Input  } from "antd";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -10,27 +10,49 @@ import Image from "next/image";
 
 // Componentes
 import Header from "../../components/Header";
+import { consumeDynamicAccess } from "next/dist/server/app-render/dynamic-rendering";
 
 export default function Personagens() {
   const [data, setData] = useState(null);
   const [curtidos, setCurtidos] = useState({});
   const router = useRouter();
   const [loading, setLoading] = useState(true);
+  const [search, setSearch] = useState("");
+  const [page, setPage] = useState(1);
+  const cardPerPage = 3;
 
-  useEffect(() => {
-    const FetchPersonagens = async () => {
-      try {
-        const response = await axios.get("https://api.disneyapi.dev/character");
-        setData(response.data);
-        console.log(response.data);
-      } catch (error) {
-        console.error("Erro ao buscar personagens:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    FetchPersonagens();
-  }, []);
+  const [charactersData, setCharactersData] = useState({
+    current: 1,
+    pageSize: cardPerPage,
+    characters: [],
+  });
+  
+useEffect(() => {
+  const fetchPersonagens = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`https://api.disneyapi.dev/character?page=${page}`);
+      setData(response.data);
+    } catch (error) {
+      console.error("Erro ao buscar personagens:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchPersonagens();
+}, [page]);
+
+  const handleSearch = () => {
+    const name = search.trim();
+    fetchPersonagens(name, 1);
+  }
+
+  const paginatedCharacters =  () => {
+    const start = (charactersData.current - 1) * charactersData.pageSize;
+    return charactersData.characters.slice(start, start + charactersData.pageSize) || [];
+  };
+
+
 
   const handleCurtir = (_id) => {
     setCurtidos((prev) => ({
@@ -51,22 +73,22 @@ export default function Personagens() {
       <Header />
       <section className={styles.banner}>
       {/* Banner aqui */}
-         <Carousel autoplay>
-    <div className={styles.carouselSlide1}>
-      <h3 style={contentStyle}></h3>
-    </div>
-    <div className={styles.carouselSlide2}>
-      <h3 style={contentStyle}>2</h3>
-    </div>
-    <div className={styles.carouselSlide3}>
-      <h3 style={contentStyle}>3</h3>
-    </div>
-    <div className={styles.carouselSlide4}>
-      <h3 style={contentStyle}>4</h3>
-    </div>
-  </Carousel>
+      
       </section>
-      <section className={styles.personagens}>
+    <section className={styles.personagens}>
+      <div className={styles.ContentPersonagens}>
+        <h2 className={styles.titlePersonagens}>Personagens</h2>
+        <p className={styles.descriptionPersonagens}>Explore os personagens da Disney</p>
+
+      <div className={styles.searchContainer}>
+        <input
+          type="text"
+          placeholder="Pesquisar personagens..."
+          className={styles.searchInput}
+        />
+        <button className={styles.searchButton}>Buscar</button>
+        </div>
+      </div>
         <div className={styles.cardsContainer}>
           {loading && <p>Carregando...</p>}
           {data?.data?.map((character) => (
@@ -110,7 +132,14 @@ export default function Personagens() {
               </div>
             </Card>
           ))}
+
         </div>
+          <Pagination
+            current={page}
+            pageSize={4}
+            total={data?.info?.totalPages * 4 || 4}
+            onChange={setPage}
+          />
       </section>
     </main>
   );
