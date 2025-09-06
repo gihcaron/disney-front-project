@@ -53,7 +53,7 @@ export default function Personagens() {
         <h1 className={styles.title}>Conheça os Personagens</h1>
       </section>
     <section className={styles.personagens}>
-       <div>
+       <div className={styles.cardsContainer}>
   {loading && <p>Carregando...</p>}
         {data?.data?.map((character) => (
           <Card
@@ -82,8 +82,8 @@ export default function Personagens() {
          <div className={styles.heart}>
             <Heart
               size={28}
-              color={curtidos[character._id] ? "rgb(16, 145, 145)" : "black"}
-              fill={curtidos[character._id] ? " rgb(16, 145, 145)" : "none"}
+              color={curtidos[character._id] ? "#1d4ed8" : "black"}
+              fill={curtidos[character._id] ? "#1d4ed8" : "none"}
               style={{ cursor: "pointer" }}
               aria-label="Curtir"
               onClick={() => handleCurtir(character._id)}

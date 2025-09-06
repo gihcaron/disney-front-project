@@ -1,15 +1,11 @@
 .main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   width: 100%;
   min-height: 100vh;
 }
 
 .banner {
   background-image: url("/images/ApiBanner.png");
-  margin: 2rem 0;
+  margin: 2rem;
   background-size: cover;
   background-position: center;
   height: 300px;
@@ -30,60 +26,69 @@
 }
 
 .personagens {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    width: 80%;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
 }
 
 .card {
   background-color: #f0f0f0;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  min-width: 300px;
-  max-width: 400px;
-  max-height: 350px;
-  min-height: 250px;
+width: 300px;
+height: 440px;
   text-align: center;
+  gap: 1rem;
   padding: 1rem;
 }
 
 .card:hover {
   transform: translateY(-5px);
+  border: 2px solid #1d4ed8;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
-.card img {
-  border-radius: 50px;
-  width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-}
 
 .image {
-  border-radius: 50%;
-  object-fit: cover;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1rem auto;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
 }
 
 .detailsContainer {
-    gap: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 1rem;
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-.details{
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 0.4rem 1.2em;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+.details {
+  background-color: transparent;
+  border: 2px solid #1d4ed8;
+  color: #1d4ed8;
+  padding: 0.4rem 1.2em;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.details:hover {
+  background-color: #1d4ed8;
+  color: white;
 }
