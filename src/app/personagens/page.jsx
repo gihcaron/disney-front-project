@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { Card, Carousel, Pagination, Skeleton, Input  } from "antd";
+import { Card, Carousel, Pagination, Skeleton, Input } from "antd";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -19,40 +19,34 @@ export default function Personagens() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
-  const cardPerPage = 3;
 
-  const [charactersData, setCharactersData] = useState({
-    current: 1,
-    pageSize: cardPerPage,
-    characters: [],
-  });
-  
-useEffect(() => {
-  const fetchPersonagens = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get(`https://api.disneyapi.dev/character?page=${page}`);
-      setData(response.data);
-    } catch (error) {
-      console.error("Erro ao buscar personagens:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-  fetchPersonagens();
-}, [page]);
+  useEffect(() => {
+    const fetchPersonagens = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(
+          `https://api.disneyapi.dev/character?page=${page}`
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar personagens:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchPersonagens();
+  }, [page]);
 
   const handleSearch = () => {
     const name = search.trim();
     fetchPersonagens(name, 1);
-  }
-
-  const paginatedCharacters =  () => {
-    const start = (charactersData.current - 1) * charactersData.pageSize;
-    return charactersData.characters.slice(start, start + charactersData.pageSize) || [];
   };
 
-
+  const cardPerPage = 3;
+  const paginatedCharacters = () => {
+    const start = (page - 1) * cardPerPage;
+    return data?.data.slice(start, start + cardPerPage) || [];
+  };
 
   const handleCurtir = (_id) => {
     setCurtidos((prev) => ({
@@ -62,36 +56,35 @@ useEffect(() => {
   };
 
   const contentStyle = {
-  height: '340px',
-  color: '#fff',
-  lineHeight: '200px',
-  textAlign: 'center',
-};
+    height: "340px",
+    color: "#fff",
+    lineHeight: "200px",
+    textAlign: "center",
+  };
 
   return (
     <main className={styles.main}>
       <Header />
-      <section className={styles.banner}>
-      {/* Banner aqui */}
-      
-      </section>
-    <section className={styles.personagens}>
-      <div className={styles.ContentPersonagens}>
-        <h2 className={styles.titlePersonagens}>Personagens</h2>
-        <p className={styles.descriptionPersonagens}>Explore os personagens da Disney</p>
+      <section className={styles.banner}>{/* Banner aqui */}</section>
+      <section className={styles.personagens}>
+        <div className={styles.ContentPersonagens}>
+          <h2 className={styles.titlePersonagens}>Personagens</h2>
+          <p className={styles.descriptionPersonagens}>
+            Explore os personagens da Disney
+          </p>
 
-      <div className={styles.searchContainer}>
-        <input
-          type="text"
-          placeholder="Pesquisar personagens..."
-          className={styles.searchInput}
-        />
-        <button className={styles.searchButton}>Buscar</button>
+          <div className={styles.searchContainer}>
+            <input
+              type="text"
+              placeholder="Pesquisar personagens..."
+              className={styles.searchInput}
+            />
+            <button className={styles.searchButton}>Buscar</button>
+          </div>
         </div>
-      </div>
         <div className={styles.cardsContainer}>
           {loading && <p>Carregando...</p>}
-          {data?.data?.map((character) => (
+          {paginatedCharacters().map((character) => (
             <Card
               key={character._id}
               className={styles.card}
@@ -132,14 +125,13 @@ useEffect(() => {
               </div>
             </Card>
           ))}
-
         </div>
-          <Pagination
-            current={page}
-            pageSize={4}
-            total={data?.info?.totalPages * 4 || 4}
-            onChange={setPage}
-          />
+        <Pagination
+          current={page}
+          pageSize={cardPerPage}
+          total={data?.data?.length || 0}
+          onChange={setPage}
+        />
       </section>
     </main>
   );
