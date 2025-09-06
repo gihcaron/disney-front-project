@@ -1,19 +1,47 @@
 "use client";
-import { useRouter } from "next/navigation"
+import { useRouter, useParams } from "next/navigation"
+import Link from "next/link";
 import axios from "axios";
 import { Card, Carousel, Pagination, Skeleton, Input } from "antd";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
-
 import styles from "./style.module.css";
 import Image from "next/image";
+import { toast } from 'react-toastify';
 
 // Componentes
 import Header from "../../../components/Header";
+import CardCharacter from "../../../components/CardCharacter";
+import CardDetails from "../../../components/CardDetails";
 
 export default function Personagens() {
 
-    
+    const {id} = useParams();
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    // Teste com Id
+    console.log(id);
+
+  useEffect(() => {
+    const fetchCharacters = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(
+          `https://api.disneyapi.dev/character/${id}`
+        );
+        console.log("Resposta da API:", response.data); 
+        setData(response.data);
+      } catch (error) {
+        console.error("Erro ao buscar personagens:", error);
+        toast.error("Erro ao carregar os personagens.");
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCharacters();
+  }, [id]);
+
     return(
     <main className={styles.main}>
     <section className={styles.SectionHeader}>
@@ -21,57 +49,46 @@ export default function Personagens() {
     </section>
 
     <section className={styles.CharacterSection}>
-       <Card className={styles.CharacterCard}>
-        <div className={styles.CharacterBox}>
-        <div className={styles.CardImage}>
-            <Image
-                src="/images/Monstros.jpg"  
-                alt="Capa do filme Carros"
-                width={1200}
-                height={400}
-                className={styles.CharacterImage}
-                priority
-            />
-        </div >
+        <div>
+        {
+            data && (
+                <CardCharacter 
+                    id={data.data?._id}
+                    imageUrl={data.data?.imageUrl || "/images/userPadrao.jpg"}
+                    Alt={data.data?.name || "Personagem Disney"}
+                    name={data.data?.name}
+                    films={data.data?.films?.join(", ") || "Sem filmes"}
+                />
+             )
+            
+        }
+           
 
-        <div className={styles.CharacterContent}>
-            <h1 className={styles.CharacterName}>Nome do Personagem</h1>
-            <p className={styles.CharacterDescription}><span>Filmes:</span> Monstros S.A.</p>       
         </div>
-        </div>
-       </Card>
 
-       <Card className={styles.CharacterDetails}>
-        <div className={styles.InfoBox}>
-            <h2 className={styles.InfoTitle}>Informações do Personagem</h2>
-            <div className={styles.InfoGrid}>
-                <div className={styles.InfoItem}>
-                    <span className={styles.InfoLabel}>Nome:</span>
-                    <span className={styles.InfoValue}>Mike Wazowski</span>
-                </div>
-                <div className={styles.InfoItem}>
-                    <span className={styles.InfoLabel}>Filme:</span>
-                    <span className={styles.InfoValue}>Monstros S.A.</span>
-                </div>
-                <div className={styles.InfoItem}>
-                    <span className={styles.InfoLabel}>Ano:</span>
-                    <span className={styles.InfoValue}>2001</span>
-                </div>
-                <div className={styles.InfoItem}>
-                    <span className={styles.InfoLabel}>Diretor:</span>
-                    <span className={styles.InfoValue}>Pete Docter</span>
-                </div>
-                <div className={styles.InfoItem}>
-                    <span className={styles.InfoLabel}>Gênero:</span>
-                    <span className={styles.InfoValue}>Animação, Comédia</span>
-                </div>
-                <div className={styles.InfoItem}>
-                    <span className={styles.InfoLabel}>Dublador:</span>
-                    <span className={styles.InfoValue}>Billy Crystal</span>
-                </div>
-            </div>
+        <CardDetails 
+            tvShows={data?.data?.tvShows?.join(", ") || "Nenhuma série"}
+            shortFilms={data?.data?.shortFilms?.join(", ") || "Sem curtas"}
+            videoGames={data?.data?.videoGames?.join(", ") || "Nenhum jogo"}
+            parkAttractions={data?.data?.parkAttractions?.join(", ") || "Nenhuma atração"}
+            allies={data?.data?.allies?.join(", ") || "Não informado"}
+            enemies={data?.data?.enemies?.join(", ") || "Não informado"}
+        />
+    </section>
+
+    <section className={styles.SectionButtons}>
+        <div className={styles.ButtonsContainer}>
+            <Link href="/personagens" className={styles.ButtonLink}>
+                <button className={styles.Button}>
+                    Página Anterior
+                </button>
+            </Link>
+            <Link href="/" className={styles.ButtonLink}>
+                <button className={styles.Button}>
+                    Voltar a Home
+                </button>
+            </Link>
         </div>
-       </Card>
     </section>
     </main>
     )

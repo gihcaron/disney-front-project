@@ -10,89 +10,59 @@ max-width: 1200px;
 padding: 0 20px;
 }
 
-.CharacterCard{
+
+.SectionButtons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.ButtonsContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.Button{
     background-color: #1d4ed8;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 25rem;
-    width: 100%;
-    overflow: hidden;
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-}
-
-.CharacterBox{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
     color: white;
-    width: 100%;
-}
-
-.CharacterImage{
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    margin-right: 20px;
-    border: 4px solid white;
-}
-
-.CharacterContent{
-    margin: 3rem ;
-    flex: 1;
-    text-align: left;
-}
-
-.CharacterName{
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
-}
-
-.CharacterDescription{
-    font-size: 1.2rem;
-    line-height: 1.6;
-}
-
-.CharacterDetails{
+    border: none;
+    padding: 0.6rem 1.2rem;
     border-radius: 30px;
-    background-color:transparent;
-    border: solid 2px #1d4ed8;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 25rem;
-    width: 100%;
-    overflow: hidden;
-    margin: 20px 0;
-    display: flex;
-    align-items: center;
-    padding: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
 }
 
-.InfoTitle{
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+.Button:hover{
+    background-color: transparent;
     color: #1d4ed8;
+    border: solid 2px #1d4ed8;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  .CharacterSection {
+    padding: 0 10px;
+  }
+
+  .SectionButtons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .ButtonsContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .Button {
+    width: 100%;
     text-align: center;
+  }
 }
-
-.InfoItem{
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-.InfoLabel{
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-.InfoValue{
-    font-weight: normal;
-}
-
-
-

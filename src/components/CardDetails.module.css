@@ -1,0 +1,69 @@
+.CharacterDetails{
+    border-radius: 30px;
+    background-color:transparent;
+    border: solid 2px #1d4ed8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    animation: slideInUp 0.3s ease-out;
+}
+
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+.InfoTitle{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #1d4ed8;
+    text-align: center;
+}
+
+.InfoItem{
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.InfoLabel{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.InfoValue{
+    font-weight: normal;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+    .CharacterDetails{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .InfoItem{
+        font-size: 1rem;
+    }
+
+    .InfoLabel{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+}
