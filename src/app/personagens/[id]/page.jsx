@@ -13,6 +13,7 @@ import { toast } from 'react-toastify';
 import Header from "../../../components/Header";
 import CardCharacter from "../../../components/CardCharacter";
 import CardDetails from "../../../components/CardDetails";
+import ButtonUp from "../../../components/ButtonUp";
 
 export default function Personagens() {
 
@@ -90,6 +91,8 @@ export default function Personagens() {
             </Link>
         </div>
     </section>
+
+    <ButtonUp />
     </main>
     )
 }

@@ -9,6 +9,7 @@ import Image from "next/image";
 // Componentes
 import Header from "../../components/Header";
 import InfoCards from "../../components/InfoCards";
+import ButtonUp from "../../components/ButtonUp";
 
 export default function Api() {
   return (
@@ -70,6 +71,8 @@ export default function Api() {
           />
         </div>
       </section>
+
+      <ButtonUp />
     </main>
   );
 }

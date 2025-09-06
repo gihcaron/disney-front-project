@@ -10,8 +10,7 @@ import Image from "next/image";
 
 // Componentes
 import Header from "../../components/Header";
-import { consumeDynamicAccess } from "next/dist/server/app-render/dynamic-rendering";
-
+import ButtonUp from "../../components/ButtonUp";
 export default function Personagens() {
   const [data, setData] = useState(null);
   const [curtidos, setCurtidos] = useState({});
@@ -148,6 +147,8 @@ export default function Personagens() {
           onChange={setPage}
         />
       </section>
+
+      <ButtonUp />
     </main>
   );
 }
