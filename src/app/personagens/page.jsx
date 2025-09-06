@@ -120,7 +120,7 @@ export default function Personagens() {
               <div className={styles.detailsContainer}>
                 <div className={styles.details}>
                   <p
-                    onClick={() => router.push(`/character/${character._id}`)}
+                    onClick={() => router.push(`/personagens/${character._id}`)}
                     className={styles.MoreDetails}
                   >
                     Ver Detalhes
