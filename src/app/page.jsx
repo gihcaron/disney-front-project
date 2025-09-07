@@ -27,7 +27,7 @@ export default function Home() {
                     </h1>
                     <p className="max-w-[500px] mb-9 text-gray-900 text-sm md:text-base">
                     Sou uma <span className="font-medium text-blue-700">Desenvolvedora de Sistemas do SENAI Valinhos,</span> apaixonada por criar soluções
-                    inovadoras. Neste site, você encontrará meu projeto realizado durante o 4o Semestre.
+                    inovadoras. Neste site, você encontrará meu projeto realizado durante o 4o Semestre na <span className="font-medium text-blue-700">2TDS1.</span>
                     </p>
 
                     <p className="max-w-[500px] mb-9 text-gray-900 text-sm md:text-base"> <span className="font-medium text-blue-800">Matéria:</span> Front-End II</p>

@@ -1,13 +1,14 @@
 "use client"
 
 import React from 'react';
+import {Card} from 'antd';
 import Image from 'next/image';
 import styles from './InfoCards.module.css';
 
 
 const InfoCards = ({HeaderImage, title, description, WindowUrl, ButtonTitle}) => {
   return (
-    <div className={styles.ApiFirstCard}>
+    <Card className={styles.ApiFirstCard}>
             <div className={styles.CardPhoto}>
               <Image
                 className={styles.CardImage}
@@ -37,7 +38,7 @@ const InfoCards = ({HeaderImage, title, description, WindowUrl, ButtonTitle}) =>
                 )
             }
             </div>
-          </div>
+          </Card>
   )
 }
 
