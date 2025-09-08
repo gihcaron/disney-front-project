@@ -26,14 +26,13 @@ const InfoCards = ({HeaderImage, title, description, WindowUrl, ButtonTitle}) =>
             {
                 ButtonTitle && (         
               <div className={styles.CardActions}>
-                <button
-                    className={styles.CardButton}
-                  onClick={() =>
-                    window.open(WindowUrl, "_blank")
-                  }
+                <a
+                  href={WindowUrl}
+                  target="_blank"
+                  className={styles.CardButton}
                 >
                   {ButtonTitle}
-                </button>
+                </a>
               </div>
                 )
             }
