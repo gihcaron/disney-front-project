@@ -4,6 +4,8 @@ import axios from "axios";
 import { Card, Carousel, Pagination, Skeleton, Input } from "antd";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
+import {toast, ToastContainer } from 'react-toastify';
+
 
 import styles from "./style.module.css";
 import Image from "next/image";
@@ -28,7 +30,9 @@ export default function Personagens() {
           `https://api.disneyapi.dev/character?page=${page}`
         );
         setData(response.data);
+        toast.success("Personagens carregados com sucesso!");
       } catch (error) {
+        toast.error("Erro ao buscar personagens");
         console.error("Erro ao buscar personagens:", error);
       } finally {
         setLoading(false);
@@ -152,6 +156,8 @@ export default function Personagens() {
       <ButtonUp />
       
       <Footer />
+
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
     </main>
   );
 }

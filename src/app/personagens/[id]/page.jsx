@@ -7,7 +7,7 @@ import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 import styles from "./style.module.css";
 import Image from "next/image";
-import { toast } from 'react-toastify';
+import {toast, ToastContainer } from 'react-toastify';
 
 // Componentes
 import Header from "../../../components/Header";
@@ -34,9 +34,10 @@ export default function Personagens() {
         );
         console.log("Resposta da API:", response.data); 
         setData(response.data);
+        toast.success(`Personagem ${response.data.data?.name} carregado com sucesso!`);
       } catch (error) {
         console.error("Erro ao buscar personagens:", error);
-        toast.error("Erro ao carregar os personagens.");
+        toast.error(`Personagem ${response.data.data?.name} não encontrado!`);
       } finally {
         setLoading(false);
       }
@@ -96,6 +97,8 @@ export default function Personagens() {
     <ButtonUp />
 
     <Footer />
+
+    <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light"/>
     </main>
     )
 }
