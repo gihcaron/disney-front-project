@@ -73,7 +73,7 @@ export default function Api() {
           <InfoCards
             HeaderImage="/images/Monstros.jpg"
             title="Possibilidade de Uso"
-            description="Usando esta API, é possível obter informações como, catálogo de filmes, descrição,  sobre os personagens da Disney."
+            description="Usando esta API, é possível obter informações como, catálogo de filmes, descrição,  sobre os personagens da Disney. Não é possível fazer alterações ou adicionar novos dados."
             WindowUrl="https://api.disneyapi.dev/character"
             ButtonTitle="Pegar personagens"
           />
