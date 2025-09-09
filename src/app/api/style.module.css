@@ -134,6 +134,12 @@
 
 .SectionContent {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 .SectionContent .ApiContent {
