@@ -17,7 +17,8 @@ export default function Api() {
     <main className="bg-gray-100">
       <Header />
       <section className={styles.SectionHeader}>
-        
+
+
         </section>
       <section className={styles.Section}>
         <div className={styles.SectionBanner}>
@@ -90,6 +91,7 @@ export default function Api() {
           />
         </div>
       </section>
+
 
       <section className={styles.SectionUsageinProject}>
         <h2 className={styles.ApiTitleText}>Uso no Projeto</h2>
