@@ -50,6 +50,7 @@ export default function Personagens() {
     <section className={styles.SectionHeader}>
        <Header /> 
     </section>
+    
 
     <section className={styles.CharacterSection}>
         <div>

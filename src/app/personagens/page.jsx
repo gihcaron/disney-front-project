@@ -4,8 +4,7 @@ import axios from "axios";
 import { Card, Carousel, Pagination, Skeleton, Input } from "antd";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
-import {toast, ToastContainer } from 'react-toastify';
-
+import { toast, ToastContainer } from "react-toastify";
 
 import styles from "./style.module.css";
 import Image from "next/image";
@@ -44,7 +43,7 @@ export default function Personagens() {
   const handleSearch = async () => {
     const name = search.trim();
     if (!name) return;
-    
+
     setLoading(true);
     try {
       const response = await axios.get(
@@ -81,7 +80,12 @@ export default function Personagens() {
   return (
     <main className={styles.main}>
       <Header />
-      <section className={styles.banner}>{/* Banner aqui */}</section>
+      <section className={styles.banner}>
+        <video className={styles.bannerVideo} autoPlay muted loop playsInline>
+          <source src="/media/disney.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeos.
+        </video>
+      </section>
       <section className={styles.personagens}>
         <div className={styles.ContentPersonagens}>
           <h2 className={styles.titlePersonagens}>Personagens</h2>
@@ -97,7 +101,9 @@ export default function Personagens() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
-            <button className={styles.searchButton} onClick={handleSearch}>Buscar</button>
+            <button className={styles.searchButton} onClick={handleSearch}>
+              Buscar
+            </button>
           </div>
         </div>
         <div className={styles.cardsContainer}>
@@ -154,10 +160,21 @@ export default function Personagens() {
       </section>
 
       <ButtonUp />
-      
+
       <Footer />
 
-      <ToastContainer position="top-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light" />
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </main>
   );
 }

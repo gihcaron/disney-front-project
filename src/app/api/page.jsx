@@ -16,6 +16,9 @@ export default function Api() {
   return (
     <main className="bg-gray-100">
       <Header />
+      <section className={styles.SectionHeader}>
+        
+        </section>
       <section className={styles.Section}>
         <div className={styles.SectionBanner}>
           <div className={styles.BannerContent}>
