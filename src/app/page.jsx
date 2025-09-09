@@ -8,6 +8,7 @@ import { FaInstagram, FaLinkedin, FaGithub, FaDesktop } from "react-icons/fa";
 // Importar componentes
 import Header from "../components/Header";
 import Photo from "../components/Photo";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -86,6 +87,8 @@ export default function Home() {
         </section>
 
       </div>
+
+      <Footer />
     </main>
   );
 }

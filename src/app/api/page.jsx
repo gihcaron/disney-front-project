@@ -10,6 +10,7 @@ import Image from "next/image";
 import Header from "../../components/Header";
 import InfoCards from "../../components/InfoCards";
 import ButtonUp from "../../components/ButtonUp";
+import Footer from "../../components/Footer";
 
 export default function Api() {
   return (
@@ -162,6 +163,8 @@ export default function Api() {
       </section>
 
       <ButtonUp />
+
+      <Footer />
     </main>
   );
 }

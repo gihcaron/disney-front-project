@@ -14,6 +14,7 @@ import Header from "../../../components/Header";
 import CardCharacter from "../../../components/CardCharacter";
 import CardDetails from "../../../components/CardDetails";
 import ButtonUp from "../../../components/ButtonUp";
+import Footer from "../../../components/Footer";
 
 export default function Personagens() {
 
@@ -93,6 +94,8 @@ export default function Personagens() {
     </section>
 
     <ButtonUp />
+
+    <Footer />
     </main>
     )
 }

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 
 import styles from "./style.module.css";
 import Image from "next/image";
+import Footer from "../../components/Footer";
 
 // Componentes
 import Header from "../../components/Header";
@@ -149,6 +150,8 @@ export default function Personagens() {
       </section>
 
       <ButtonUp />
+      
+      <Footer />
     </main>
   );
 }
