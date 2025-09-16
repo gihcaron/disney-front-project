@@ -1,0 +1,169 @@
+.main{
+    margin-top: 10rem;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container{
+    margin-top: 10rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.title{
+    font-weight: 500;
+    font-size: 2rem;
+    color: #1d4ed8;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formContainer{
+    border: 2px solid #1d4ed8;
+    width: 60rem;
+    height: 51rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px; 
+    padding: 4rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.formInput{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.formInput:focus{
+    border-color: #1d4ed8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(29, 78, 216, 0.5);
+}
+
+.formLabel{
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.formButton{
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.emptyMessage{
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+}
+
+.personagensList{
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-between;
+    gap: 1rem;
+}
+.personagemCard {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    
+    border: 2px solid #1d4ed8;
+    padding: 2rem;
+    min-height: 15rem;
+    width: 22rem;
+    border-radius: 12px;
+    background-color: #eef3ff; /* Azul clarinho */
+    box-shadow: 0 4px 8px rgba(29, 78, 216, 0.15); /* sombra azul */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.personagemCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(29, 78, 216, 0.25);
+}
+
+.personagemName {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1d4ed8;
+    margin-bottom: 1rem;
+}
+
+.personagemFilms, .personagemAllies, .personagemEnemies {
+    font-size: 1rem;
+    color: #333;
+    margin: 0.5rem 0;
+}
+
+/* Botões */
+.editButton {
+    background-color: #1d4ed8;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 4px;
+    font-size: 14px;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+.editButton:hover {
+    background-color: #163bb5;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(29, 78, 216, 0.25);
+}
+
+.deleteButton {
+    background-color: #dc2626; /* vermelho */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: 4px;
+    font-size: 14px;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+.deleteButton:hover {
+    background-color: #b91c1c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(220, 38, 38, 0.25);
+}
+
+.personagemImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; 
+    margin-top: 1rem;
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
