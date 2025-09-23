@@ -27,9 +27,10 @@ export default function Personagens() {
       try {
         const response = await axios.get(
           `https://api.disneyapi.dev/character?page=${page}`
+
         );
         setData(response.data);
-        toast.success("Personagens carregados com sucesso!");
+        toast.success("Personagens carregados com sucesso! ");
       } catch (error) {
         toast.error("Erro ao buscar personagens");
         console.error("Erro ao buscar personagens:", error);
