@@ -24,7 +24,7 @@ export default function Personagens() {
   useEffect(() => {
     const fetchPersonagens = async () => {
       setLoading(true);
-      try {
+      try {     
         const response = await axios.get(
           `https://api.disneyapi.dev/character?page=${page}`
 
