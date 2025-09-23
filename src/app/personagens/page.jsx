@@ -106,6 +106,17 @@ export default function Personagens() {
               Buscar
             </button>
           </div>
+
+          <div className={styles.CRUDContainer}>
+            <button
+              className={styles.addButton}
+              onClick={() => router.push("/novos-personagens")}
+            >
+              Adicionar Personagem
+            </button>
+            
+          </div>
+
         </div>
         <div className={styles.cardsContainer}>
           {loading && <p>Carregando...</p>}
