@@ -1,0 +1,95 @@
+.main {
+min-height: 100vh;
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* joga o footer pro fim */
+    align-items: center;
+    padding-top: 6rem;
+}
+
+.mainContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+}
+
+.putContainer {
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.putContainer h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.putContainer input,
+.putContainer textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-top: 0.5rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+.putContainer input:focus,
+.putContainer textarea:focus {
+    border-color: #2563eb;
+    outline: none;
+}
+
+.putContainer button {
+    margin-top: 1rem;
+    padding: 0.75rem 2rem;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.putContainer button:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+}
+
+.putContainer h2 {
+    font-size: 1.25rem;
+    color: #334155;
+    margin-bottom: 0.5rem;
+}
+
+.putContainer p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+@media (max-width: 700px) {
+    .mainContainer {
+        max-width: 98vw;
+        padding: 1rem;
+    }
+    .putContainer {
+        padding: 1rem;
+    }
+}

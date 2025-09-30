@@ -88,6 +88,46 @@
   background-color: #2563eb;
 }
 
+.CRUDContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.addButton {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 2px solid #1d4ed8;
+  background-color: #1d4ed8;
+  color: white;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+
+.PutButton {
+  padding: 0.5rem 1rem;
+  border: 2px solid #1d4ed8;
+  background-color: #1d4ed8;
+  color: white;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+  background-color: transparent;
+  color: #1d4ed8;
+}
+
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;

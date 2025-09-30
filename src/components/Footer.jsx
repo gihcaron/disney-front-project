@@ -7,7 +7,7 @@ export default function Footer() {
       <h1 className={styles.title} onClick={() => (window.location.href = "/")}>
         <span className="text-white">Caron</span>.
       </h1>
-      <p className={styles.copy}>&copy; 2023 Your Company Name. All rights reserved.</p>
+      <p className={styles.copy}>&copy; 2025  Caron. Todos os direitos reservados.</p>
 
     </div>
   );

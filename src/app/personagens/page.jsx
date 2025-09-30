@@ -5,13 +5,15 @@ import { Card, Carousel, Pagination, Skeleton, Input } from "antd";
 import { Heart } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { FiRefreshCw } from "react-icons/fi";
+
 
 import styles from "./style.module.css";
 import Image from "next/image";
-import Footer from "../../components/Footer";
 
 // Componentes
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import ButtonUp from "../../components/ButtonUp";
 export default function Personagens() {
   const [data, setData] = useState(null);
@@ -112,9 +114,15 @@ export default function Personagens() {
               className={styles.addButton}
               onClick={() => router.push("/novos-personagens")}
             >
-              Adicionar Personagem
+              +
             </button>
-            
+
+            <button
+              className={styles.PutButton}
+              onClick={() => router.push("/atualizar-personagem")}
+            >
+              Atualizar
+            </button>
           </div>
 
         </div>
