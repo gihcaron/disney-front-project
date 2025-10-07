@@ -1,15 +1,16 @@
 .main {
-min-height: 100vh;
-    background: #f8fafc;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* joga o footer pro fim */
-    align-items: center;
-    padding-top: 6rem;
+    background: #f8fafc;  
+    padding-top: 7rem;
+    min-width: 100%;
+    min-height: 100vh;
 }
 
 .mainContainer {
     width: 100%;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 600px;
     margin: 0 auto;
     padding: 2rem;
