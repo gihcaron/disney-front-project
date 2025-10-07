@@ -31,7 +31,19 @@ export default function Personagens() {
           `https://api.disneyapi.dev/character?page=${page}`
 
         );
-        setData(response.data);
+        let personagens = response.data.data;
+
+        // Garantir que `personagens` seja sempre um array antes de usar .map
+        if (!Array.isArray(personagens)) {
+          personagens = personagens ? [personagens] : [];
+        }
+
+        personagens = personagens.map((personagem) => {
+          const salvo = sessionStorage.getItem(`personagem-${personagem._id}`);
+          return salvo ? JSON.parse(salvo) : personagem;
+        });
+
+        setData({...response.data, data: personagens});
         toast.success("Personagens carregados com sucesso! ");
       } catch (error) {
         toast.error("Erro ao buscar personagens");
@@ -52,7 +64,18 @@ export default function Personagens() {
       const response = await axios.get(
         `https://api.disneyapi.dev/character?name=${name}`
       );
-      setData(response.data);
+      let personagens = response.data.data;
+
+      if (!Array.isArray(personagens)) {
+        personagens = personagens ? [personagens] : [];
+      }
+
+      personagens = personagens.map((personagem) => {
+        const salvo = sessionStorage.getItem(`personagem-${personagem._id}`);
+        return salvo ? JSON.parse(salvo) : personagem;
+      });
+
+      setData({...response.data, data: personagens});
     } catch (error) {
       console.error("Erro ao buscar personagens:", error);
     } finally {
@@ -71,13 +94,6 @@ export default function Personagens() {
       ...prev,
       [_id]: !prev[_id],
     }));
-  };
-
-  const contentStyle = {
-    height: "340px",
-    color: "#fff",
-    lineHeight: "200px",
-    textAlign: "center",
   };
 
   return (
